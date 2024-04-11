@@ -1,11 +1,27 @@
-import React from "react";
-import PersonalInput from "./PersonalInput";
+import React, {useState} from "react";
 import '../styles/main.css';
+import InputContainer from "./InputContainer";
+import DisplayContainer from "./DisplayContainer";
 
 export default function Main() {
+  const [personalDetails, setPersonalDetails] = useState({
+    firstName : "",
+    lastName : "",
+    email : "",
+    phoneNumber: "",
+  });
+
+  function handlePersonalDetailsChange(newPersonalDetails) {
+    setPersonalDetails(newPersonalDetails);
+  };
+  
   return (
     <main className="main">
-      <PersonalInput />
+      <InputContainer 
+      personalDetails={personalDetails}
+      onPersonalDetailsChange= {handlePersonalDetailsChange}
+      />
+      <DisplayContainer />
     </main>
   )
 }

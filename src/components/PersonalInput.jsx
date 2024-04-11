@@ -2,49 +2,38 @@ import React, { useState } from "react";
 import InputGrp from "./InputGrp";
 import '../styles/personalDetails.css'
 
-export default function PersonalInput() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+export default function PersonalInput({personalDetails, onPersonalDetailsChange}) {
+  function handleChange(e) {
+    const { id, value } = e.target;
+    const newPersonalDetails = {
+      ...personalDetails,
+      [id]: value,
+    };
+    onPersonalDetailsChange(newPersonalDetails);
+  };
 
-  function handleFirstNameChange(e) {
-    setFirstName(e.target.value);
-  }
-
-  function handleLastNameChange(e) {
-    setLastName(e.target.value);
-  }
-
-  function handleEmailChange(e) {
-    setEmail(e.target.value);
-  }
-
-  function handlePhoneNumberChange(e) {
-    setPhoneNumber(e.target.value);
-  }
   return (
     <form action="" className="personal_form">
       <h2>Personal Details</h2>
       <InputGrp 
-      id="FirstName" labeltext="First Name" 
+      id="firstName" labeltext="First Name" 
       type="text"  placeholder="First Name"
-      value={firstName} onChange={(e) => handleFirstNameChange(e)}
+      value={personalDetails.firstName} onChange={handleChange}
       />
       <InputGrp 
-      id="LastName" labeltext="Last Name" 
+      id="lastName" labeltext="Last Name" 
       type="text" placeholder="Last Name" 
-      value={lastName} onChange={(e) => handleLastNameChange(e)}
+      value={personalDetails.lastName} onChange={handleChange}
       />
       <InputGrp 
       id="email" labeltext="Email" 
       type="email" placeholder="email@example.com" 
-      value={email} onChange={(e) => handleEmailChange(e)}
+      value={personalDetails.email} onChange={handleChange}
       />
       <InputGrp 
       id="phoneNumber" labeltext="Phone Number" 
       type="number" placeholder="Phone Number"
-      value={phoneNumber} onChange={(e) => handlePhoneNumberChange(e)}
+      value={personalDetails.phoneNumber} onChange={handleChange}
       />
     </form>
   )
