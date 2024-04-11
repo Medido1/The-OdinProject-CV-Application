@@ -21,7 +21,7 @@ export default function Main() {
       personalDetails={personalDetails}
       onPersonalDetailsChange= {handlePersonalDetailsChange}
       />
-      <DisplayContainer />
+      <DisplayContainer personalDetails={personalDetails}/>
     </main>
   )
 }
