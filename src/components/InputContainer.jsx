@@ -1,5 +1,6 @@
 import React from "react";
 import PersonalInput from "./PersonalInput";
+import EducationInput from "./EducationInput";
 
 export default function InputContainer({personalDetails, onPersonalDetailsChange}) {
   return (
@@ -7,6 +8,7 @@ export default function InputContainer({personalDetails, onPersonalDetailsChange
       <PersonalInput 
       personalDetails={personalDetails} 
       onPersonalDetailsChange={onPersonalDetailsChange}/>
+      <EducationInput />
     </div>
     
   )
