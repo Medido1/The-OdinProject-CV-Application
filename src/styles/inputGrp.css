@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: .5rem;
   font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .input_grp input {
@@ -17,4 +18,8 @@
 
 .input_grp input:focus {
   border: 1px solid #67e8f9;
+}
+
+.input_grp[type="date"] {
+  color: red;
 }
