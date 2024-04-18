@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import educationIcon from '../assets/mortarboard.png';
 import arrowDown from '../assets/arrowDown.png';
 import arrowUp from '../assets/arrowUp.png';
@@ -10,14 +10,44 @@ export default function EducationInput({
   onEducationDetailsChange}) {
   const [isShowForm, setIsShowForm] = useState(false);
   const [addBtn, setAddBtn] = useState(false);
+  const [isShowList, setIsShowList] = useState(false);
+  const [educationList, setEducationList] = useState([]);
+
+  useEffect(() => {
+    const localEducationList = JSON.parse(localStorage.getItem("education_list")) || [];
+    setEducationList(localEducationList);
+  }, []);
+
+  function saveEducationInfo(e) {
+    e.preventDefault();
+    const newEducationDetails = {...educationDetails, id: Date.now()};
+    const updatedList = [...educationList, newEducationDetails];
+    setEducationList(updatedList);
+    localStorage.setItem("education_list", JSON.stringify(updatedList));
+    setIsShowForm(false);
+    setAddBtn(true);
+    renderEducationList();
+  } 
+
+  function clearEducationList() { /* clear the stored list for debugging */
+    setEducationList([]);
+    localStorage.removeItem("education_list");
+  }
+
+  function renderEducationList() {
+    setIsShowForm(false);
+    setIsShowList(true);
+  }
 
   function showAddBtn() {
     setAddBtn(!addBtn);
+    setIsShowList(!isShowList);
   }
 
   function showForm() {
     setIsShowForm(!isShowForm);
     showAddBtn();
+    setIsShowList(false);
   }
  
   function handleChange(e) {
@@ -40,6 +70,15 @@ export default function EducationInput({
         alt="open menu img" className="icon" 
         onClick={showAddBtn}/>
       </div>
+      {isShowList && 
+        educationList.map(edu => (
+          <ul className="education_list">
+            <li key={edu.id}>
+              {edu.school}
+            </li>
+          </ul>
+        
+      ))}
       {addBtn && 
         <button className="add_education" onClick={showForm}>
           + Education
@@ -70,7 +109,7 @@ export default function EducationInput({
         <div className="btns">
           <button className="form_btn">Delete</button>
           <button className="form_btn">Cancel</button>
-          <button className="form_btn">Save</button>
+          <button className="form_btn" onClick={(e) => saveEducationInfo(e)}>Save</button>
         </div>
       </form>
       }
