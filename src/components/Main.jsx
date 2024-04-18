@@ -34,7 +34,10 @@ export default function Main() {
       educationDetails={educationDetails}
       onEducationDetailsChange={handleEducationDetailsChange}
       />
-      <DisplayContainer personalDetails={personalDetails}/>
+      <DisplayContainer 
+      personalDetails={personalDetails}
+      educationDetails={educationDetails}
+      />
     </main>
   )
 }
