@@ -9,11 +9,17 @@ export default function EducationInput({
   educationDetails,
   onEducationDetailsChange}) {
   const [isShowForm, setIsShowForm] = useState(false);
+  const [addBtn, setAddBtn] = useState(false);
+
+  function showAddBtn() {
+    setAddBtn(!addBtn);
+  }
 
   function showForm() {
     setIsShowForm(!isShowForm);
+    showAddBtn();
   }
-
+ 
   function handleChange(e) {
     const { id, value } = e.target;
     const newEducationDetails = {
@@ -32,9 +38,15 @@ export default function EducationInput({
         </div>
         <img src={isShowForm ? arrowUp : arrowDown}
         alt="open menu img" className="icon" 
-        onClick={showForm}/>
+        onClick={showAddBtn}/>
       </div>
-      <form className="education_form">
+      {addBtn && 
+        <button className="add_education" onClick={showForm}>
+          + Education
+        </button>
+      }
+      {isShowForm && 
+        <form className="education_form">
         <InputGrp 
           id="school" labeltext="School"
           type="text" placeholder="Enter School/university"
@@ -56,6 +68,7 @@ export default function EducationInput({
           onChange={handleChange}
         />
       </form>
+      }
     </div>
   )
 }

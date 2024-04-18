@@ -22,7 +22,6 @@
   gap: 1rem;
 }
 
-
 .form_header h2 {
   margin-bottom: 0;
 }
@@ -30,4 +29,19 @@
 .icon.big {
   width: 40px;
   height: auto;
+}
+
+.add_education {
+  cursor: pointer;
+  padding: .5rem 1.5rem;
+  font-size: 1.25rem;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 100vmax;
+  align-self: center;
+  transition: transform 250ms ease-in-out;
+}
+
+.add_education:hover{
+  transform: scale(1.1);
 }
