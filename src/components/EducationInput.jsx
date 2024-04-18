@@ -67,6 +67,11 @@ export default function EducationInput({
           type="date" value={educationDetails.endDate}
           onChange={handleChange}
         />
+        <div className="btns">
+          <button className="form_btn">Delete</button>
+          <button className="form_btn">Cancel</button>
+          <button className="form_btn">Save</button>
+        </div>
       </form>
       }
     </div>

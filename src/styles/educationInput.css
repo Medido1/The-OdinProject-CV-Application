@@ -45,3 +45,18 @@
 .add_education:hover{
   transform: scale(1.1);
 }
+
+.btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.form_btn {
+  cursor: pointer;
+  padding: .25rem .75rem;
+  background-color: transparent;
+  font: inherit;
+  font-size: 1.25rem;
+  border-radius: .5rem;
+  outline: none;
+}
