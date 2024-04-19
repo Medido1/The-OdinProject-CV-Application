@@ -43,6 +43,12 @@ export default function EducationInput({
     showAddBtn();
   }
 
+  function deleteEducation(e) {
+    e.preventDefault();
+    resetFormInputs();
+    showAddBtn();
+  }
+
   function showAddBtn() {
     if (isShowForm) {
       setIsShowForm(!isShowForm)
@@ -56,7 +62,20 @@ export default function EducationInput({
     setIsShowForm(!isShowForm);
     showAddBtn();
   }
- 
+
+  function showEduacation(id) {
+    showForm();
+    let myList = educationList.filter(edu => edu.id === id);
+    let selectedList = myList[0];
+    onEducationDetailsChange({
+      school: selectedList.school,
+      degree: selectedList.degree,
+      startDate: selectedList.startDate,
+      endDate: selectedList.endDate,
+    })
+  }
+
+  
   function handleChange(e) {
     const { id, value } = e.target;
     const newEducationDetails = {
@@ -80,7 +99,7 @@ export default function EducationInput({
       {<ul className="education_list">
         {isShowList && 
           educationList.map(edu => (
-            <li key={edu.id}>
+            <li key={edu.id} onClick={() => showEduacation(edu.id)}>
               {edu.school}
             </li>
         ))}
@@ -113,7 +132,7 @@ export default function EducationInput({
           onChange={handleChange}
         />
         <div className="btns">
-          <button className="form_btn">Delete</button>
+          <button className="form_btn" onClick={(e) => deleteEducation(e)}>Delete</button>
           <button className="form_btn" onClick={(e) => cancelInput(e)}>Cancel</button>
           <button className="form_btn" onClick={(e) => saveEducationInfo(e)}>Save</button>
         </div>
