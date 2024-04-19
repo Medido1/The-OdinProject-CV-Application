@@ -37,6 +37,12 @@ export default function EducationInput({
     setIsShowList(true); 
   } 
 
+  function cancelInput(e) {
+    e.preventDefault();
+    resetFormInputs();
+    showAddBtn();
+  }
+
   function showAddBtn() {
     if (isShowForm) {
       setIsShowForm(!isShowForm)
@@ -108,7 +114,7 @@ export default function EducationInput({
         />
         <div className="btns">
           <button className="form_btn">Delete</button>
-          <button className="form_btn">Cancel</button>
+          <button className="form_btn" onClick={(e) => cancelInput(e)}>Cancel</button>
           <button className="form_btn" onClick={(e) => saveEducationInfo(e)}>Save</button>
         </div>
       </form>
