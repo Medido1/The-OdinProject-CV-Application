@@ -16,12 +16,22 @@ export default function EducationInput({
   const [addBtn, setAddBtn] = useState(false);
   const [isShowList, setIsShowList] = useState(false);
 
+  const resetFormInputs = () => {
+    onEducationDetailsChange({
+      school: "",
+      degree: "",
+      startDate: "",
+      endDate: ""
+    });
+  };
+
   function saveEducationInfo(e) {
     e.preventDefault();
     const newEducationDetails = {...educationDetails, id: Date.now()}
     const updatedList = [...educationList, newEducationDetails];
     localStorage.setItem("education_list", JSON.stringify(updatedList));
     setEducationList(updatedList);
+    resetFormInputs();
     setIsShowForm(false);
     setAddBtn(true);
     setIsShowList(true); 
