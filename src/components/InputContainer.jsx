@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PersonalInput from "./PersonalInput";
 import EducationInput from "./EducationInput";
 
@@ -6,7 +6,11 @@ export default function InputContainer({
   personalDetails,
   onPersonalDetailsChange,
   educationDetails,
-  onEducationDetailsChange}) {
+  onEducationDetailsChange,
+  educationList,
+  setEducationList
+  }) {
+  
   return (
     <div className="input_container">
       <PersonalInput 
@@ -15,6 +19,8 @@ export default function InputContainer({
       <EducationInput 
         educationDetails={educationDetails}
         onEducationDetailsChange={onEducationDetailsChange}
+        educationList={educationList}
+        setEducationList={setEducationList}
       />
     </div>
     
