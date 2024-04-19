@@ -45,8 +45,16 @@ export default function EducationInput({
 
   function deleteEducation(e) {
     e.preventDefault();
+    let formInfo = educationDetails;
+    let index = getIndex(formInfo);
+    let updatedList  = educationList.splice(index, 1);
+    setEducationList(updatedList);
     resetFormInputs();
     showAddBtn();
+  }
+
+  function getIndex(info) {
+    return educationList.findIndex(item => item.school === info.school && item.degree === info.degree) 
   }
 
   function showAddBtn() {
@@ -75,7 +83,6 @@ export default function EducationInput({
     })
   }
 
-  
   function handleChange(e) {
     const { id, value } = e.target;
     const newEducationDetails = {

@@ -64,10 +64,11 @@
 .education_list {
   list-style: none;
   font-size: 1.25rem;
-  text-align: center;
 }
 
 .education_list li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   padding: .25rem;
+  display: flex;
+  justify-content: space-between;
 }
