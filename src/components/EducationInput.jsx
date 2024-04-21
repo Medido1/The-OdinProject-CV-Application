@@ -47,8 +47,8 @@ export default function EducationInput({
     e.preventDefault();
     let formInfo = educationDetails;
     let index = getIndex(formInfo);
-    let updatedList  = educationList.splice(index, 1);
-    setEducationList(updatedList);
+    educationList.splice(index, 1);
+    setEducationList(educationList);
     resetFormInputs();
     showAddBtn();
   }
