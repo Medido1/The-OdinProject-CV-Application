@@ -3,6 +3,8 @@ import PersonalInfoDisplay from './PersonalInfoDisplay';
 
 export default function displayContainer({personalDetails}) {
   return (
-    <PersonalInfoDisplay personalDetails={personalDetails}/>
+    <div className='display_container'>
+      <PersonalInfoDisplay personalDetails={personalDetails}/>
+    </div>
   )
 }
