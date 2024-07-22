@@ -28,6 +28,7 @@ export default function EducationInput() {
       {addBtn && 
       <button className='btn add' onClick={showAddBtn}>+ Education</button>
       }
+      {showForm && 
       <form action="" className='education_form'>
         <InputGrp id="school" labeltext="School"
           type="text" placeholder="Enter School/university"
@@ -38,6 +39,7 @@ export default function EducationInput() {
         <InputGrp id="startDate" labeltext="Start Date" type="date" />
         <InputGrp id="endDate" labeltext="end Date"type="date" />
       </form>
+      }
     </div>
   )
 }
