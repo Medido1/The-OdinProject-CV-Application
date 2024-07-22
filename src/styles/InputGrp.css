@@ -1,0 +1,25 @@
+.input_grp {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.input_grp input {
+  height: 2rem;
+  padding: .75rem;
+  font-size: inherit;
+  border-radius: .5rem;
+  outline: none;
+  border: 0;
+  background-color: #f1f5f9;
+}
+
+.input_grp input:focus {
+  border: 1px solid #67e8f9;
+}
+
+.input_grp[type="date"] {
+  color: red;
+}
