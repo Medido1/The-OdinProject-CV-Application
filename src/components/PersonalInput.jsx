@@ -1,13 +1,23 @@
 import React from 'react';
 import InputGrp from './InputGrp';
 
-export default function PersonalInput() {
+export default function PersonalInput({personalDetails, onPersonalDetailsChange}) {
+  function handleChange(e) {
+    const {id, value} = e.target;
+    const newPersonalDetails = {
+      ...personalDetails,
+      [id]: value,
+    };
+    onPersonalDetailsChange(newPersonalDetails);
+    console.log(personalDetails.firstName);
+  }
   return (
     <form action="" className='personal_details_form'>
       <h2>Personal Details</h2>
       <InputGrp id="firstName" 
       labeltext="First Name"
-      type="text" placeholder="First Name"/>
+      type="text" placeholder="First Name"
+      value={personalDetails.firstName} onChange={handleChange}/>
       <InputGrp id="lastName" 
       labeltext="Last Name"
       type="text" placeholder="Last Name"/>

@@ -1,8 +1,12 @@
 import React from 'react';
 import PersonalInput from './PersonalInput';
 
-export default function InputContainer() {
+export default function InputContainer({personalDetails, onPersonalDetailsChange}) {
   return (
-    <PersonalInput />
+    <div className="input_container">
+      <PersonalInput personalDetails={personalDetails} 
+      onPersonalDetailsChange={onPersonalDetailsChange}/>
+    </div>
+    
   )
 }

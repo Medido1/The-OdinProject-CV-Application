@@ -2,6 +2,11 @@ import React from 'react';
 
 export default function PersonalInfoDisplay() {
   return (
-    <h1>Test</h1>
+    <div className="personal_info_display">
+      <h1>Personal Informations</h1>
+      <div>
+        
+      </div>
+    </div>
   )
 }

@@ -22,6 +22,8 @@ body {
 
 .main {
   padding: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .input_container {
@@ -29,11 +31,19 @@ body {
   
 }
 
-.personal_details_form {
+.personal_details_form,
+.personal_info_display{
   background-color: #fff;
   padding: 1.25rem;
   border-radius: .5rem;
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 25%;
+}
+
+
+.personal_info_display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
