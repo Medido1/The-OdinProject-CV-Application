@@ -5,10 +5,16 @@ import arrowDown from '../assets/icons/down-arrow.png';
 
 export default function EducationInput() {
   const [showForm, setShowForm] = useState(false);
+  const [addBtn, setAddBtn] = useState(true);
 
   function handleShowForm() {
     setShowForm(!showForm);
   }
+
+  function showAddBtn() {
+    setAddBtn(!addBtn)
+  }
+
   return (
     <form action="" className='education_form'>
       <h2>
@@ -18,7 +24,9 @@ export default function EducationInput() {
         onClick={handleShowForm}
         />
       </h2>
-      <button className='btn add'>+ Education</button>
+      {addBtn && 
+      <button className='btn add' onClick={showAddBtn}>+ Education</button>
+      }
     </form>
   )
 }
