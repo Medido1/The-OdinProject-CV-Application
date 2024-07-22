@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InputGrp from './InputGrp';
 import educationIcon from '../assets/icons/mortarboard.png';
 import arrowUp from '../assets/icons/up-arrow.png';
 import arrowDown from '../assets/icons/down-arrow.png';
@@ -16,7 +17,7 @@ export default function EducationInput() {
   }
 
   return (
-    <form action="" className='education_form'>
+    <div className='education_form_container'>
       <h2>
         <img src={educationIcon} className='icon'/>
         Education
@@ -27,6 +28,16 @@ export default function EducationInput() {
       {addBtn && 
       <button className='btn add' onClick={showAddBtn}>+ Education</button>
       }
-    </form>
+      <form action="" className='education_form'>
+        <InputGrp id="school" labeltext="School"
+          type="text" placeholder="Enter School/university"
+        />
+        <InputGrp id="degree" labeltext="Degree"
+          type="text" placeholder="Enter degree/field of study"
+        />
+        <InputGrp id="startDate" labeltext="Start Date" type="date" />
+        <InputGrp id="endDate" labeltext="end Date"type="date" />
+      </form>
+    </div>
   )
 }

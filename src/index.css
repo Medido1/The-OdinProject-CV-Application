@@ -35,7 +35,7 @@ body {
 
 .personal_details_form,
 .personal_info_display,
-.education_form{
+.education_form_container{
   background-color: #fff;
   padding: 1.25rem;
   border-radius: .5rem;
@@ -68,7 +68,7 @@ body {
 }
 
 .personal_details p,
-.education_form h2 {
+.education_form_container h2 {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -79,7 +79,7 @@ body {
   height: auto;
 }
 
-.education_form h2 img:last-child {
+.education_form_container h2 img:last-child {
   margin-left: auto;
   cursor: pointer;
 }
@@ -98,4 +98,8 @@ body {
 
 .btn.add:hover {
   transform: scale(1.1);
+}
+
+.education_form {
+  margin-top: 1rem;
 }
