@@ -9,7 +9,6 @@ export default function PersonalInput({personalDetails, onPersonalDetailsChange}
       [id]: value,
     };
     onPersonalDetailsChange(newPersonalDetails);
-    console.log(personalDetails.firstName);
   }
   return (
     <form action="" className='personal_details_form'>
@@ -20,16 +19,22 @@ export default function PersonalInput({personalDetails, onPersonalDetailsChange}
       value={personalDetails.firstName} onChange={handleChange}/>
       <InputGrp id="lastName" 
       labeltext="Last Name"
-      type="text" placeholder="Last Name"/>
+      type="text" placeholder="Last Name"
+      value={personalDetails.lastName} onChange={handleChange}/>
       <InputGrp id="email"
       labeltext="Email" 
-      type="email" placeholder="example@email.com" />
+      type="email" placeholder="example@email.com"
+      value={personalDetails.email} onChange={handleChange}
+      />
       <InputGrp id="phoneNumber" 
       labeltext="Phone Number" 
-      type="tel" placeholder="Enter phone number"/>
+      type="tel" placeholder="Enter phone number"
+      value={personalDetails.phoneNumber} onChange={handleChange}/>
       <InputGrp id="address"
       labeltext="Adress"
-      type="text" placeholder="City, Country"/>
+      type="text" placeholder="City, Country"
+      value={personalDetails.address} onChange={handleChange}
+      />
     </form>
   )
 }

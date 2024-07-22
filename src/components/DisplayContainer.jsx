@@ -1,8 +1,8 @@
 import React from 'react';
 import PersonalInfoDisplay from './PersonalInfoDisplay';
 
-export default function displayContainer() {
+export default function displayContainer({personalDetails}) {
   return (
-    <PersonalInfoDisplay />
+    <PersonalInfoDisplay personalDetails={personalDetails}/>
   )
 }

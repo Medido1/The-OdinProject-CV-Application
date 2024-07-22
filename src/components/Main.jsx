@@ -8,7 +8,7 @@ export default function Main() {
     lastName: "",
     email: "",
     phoneNumber: "",
-    adress: "",
+    address: "",
   })
 
   function handlePersonalDetailsChange(newPersonalDetails) {
@@ -20,7 +20,9 @@ export default function Main() {
       personalDetails={personalDetails}
       onPersonalDetailsChange = {handlePersonalDetailsChange}
       />
-      <DisplayContainer />
+      <DisplayContainer
+      personalDetails={personalDetails}
+      />
     </main>
   )
 }
