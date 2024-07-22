@@ -18,6 +18,7 @@ export default function EducationInput() {
         onClick={handleShowForm}
         />
       </h2>
+      <button className='btn add'>+ Education</button>
     </form>
   )
 }

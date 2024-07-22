@@ -83,3 +83,19 @@ body {
   margin-left: auto;
   cursor: pointer;
 }
+
+.btn.add {
+  cursor: pointer;
+  padding: .5rem 1.5rem;
+  font-size: 1.25rem;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 100vmax;
+  align-self: center;
+  transition: transform 250ms ease-in-out;
+  margin-top: 1rem;
+}
+
+.btn.add:hover {
+  transform: scale(1.1);
+}
