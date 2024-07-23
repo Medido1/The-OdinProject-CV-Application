@@ -54,6 +54,11 @@ export default function EducationInput({educationDetails, onEducationDetailsChan
         <InputGrp id="endDate" labeltext="end Date"type="date" 
           value={educationDetails.endDate} onChange={handleChange}
         />
+        <div className="btns">
+          <button className="btn">Delete</button>
+          <button className="btn">Cancel</button>
+          <button className="btn">Save</button>
+        </div>
       </form>
       }
     </div>

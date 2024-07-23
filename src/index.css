@@ -113,6 +113,7 @@ body {
 
 .education_display {
   padding: 1.25rem;
+  font-size: 1.125rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -127,4 +128,24 @@ body {
 .education_display>div {
   display: flex;
   gap: 3rem;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 1.125rem;
+}
+
+.btns .btn {
+  padding: .5rem;
+  border: 0;
+  border-radius: .5rem;
+  font-size: inherit;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+}
+
+.btns .btn:hover {
+  color: rebeccapurple;
+  transform: scale(1.1);
 }
