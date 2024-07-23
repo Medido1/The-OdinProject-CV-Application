@@ -7,6 +7,8 @@ import arrowDown from '../assets/icons/down-arrow.png';
 export default function EducationInput({educationDetails, onEducationDetailsChange}) {
   const [showForm, setShowForm] = useState(false);
   const [addBtn, setAddBtn] = useState(true);
+  const [educationList, setEducationList] = useState([]);
+ 
 
   function handleShowForm() {
     setShowForm(!showForm);
@@ -26,6 +28,26 @@ export default function EducationInput({educationDetails, onEducationDetailsChan
     onEducationDetailsChange(newEducationDetails);
   }
 
+  function resetFormInput() {
+    onEducationDetailsChange({
+      school: "",
+      degree: "",
+      startDate: "",
+      endDate: "",
+    })
+  }
+
+  function saveInfo(e) {
+    e.preventDefault();
+    const newEducationDetails = {...educationDetails, id : Date.now()};
+    const updatedList = [...educationList, newEducationDetails];
+    setEducationList(updatedList);
+    setShowForm(false);
+    setAddBtn(true);
+    resetFormInput();
+
+  }
+
   return (
     <div className='education_form_container'>
       <h2>
@@ -35,10 +57,21 @@ export default function EducationInput({educationDetails, onEducationDetailsChan
         onClick={handleShowForm}
         />
       </h2>
-      {addBtn && 
-      <button className='btn add' onClick={showAddBtn}>+ Education</button>
+      {showForm  && 
+        <>
+          {addBtn && 
+            <button className='btn add' onClick={showAddBtn}>+ Education</button>
+          }
+          {educationList.length > 0 && addBtn && 
+            <ul className='education_list'>
+              {educationList.map(item => 
+                <li key={item.id}>{item.school}</li>
+              )}
+            </ul>
+          }
+        </>
       }
-      {showForm && 
+      {showForm && !addBtn &&
       <form action="" className='education_form'>
         <InputGrp id="school" labeltext="School"
           type="text" placeholder="Enter School/university"
@@ -57,7 +90,7 @@ export default function EducationInput({educationDetails, onEducationDetailsChan
         <div className="btns">
           <button className="btn">Delete</button>
           <button className="btn">Cancel</button>
-          <button className="btn">Save</button>
+          <button className="btn" onClick={saveInfo}>Save</button>
         </div>
       </form>
       }
