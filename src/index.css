@@ -35,14 +35,14 @@ body {
 
 .personal_details_form,
 .personal_info_display,
-.education_form_container{
+.info_form_container{
   background-color: #fff;
   padding: 1.25rem;
   border-radius: .5rem;
 }
 
 .personal_details_form,
-.education_form_container,
+.info_form_container,
 .display_container {
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: .5rem;
@@ -75,7 +75,7 @@ body {
 }
 
 .personal_details p,
-.education_form_container h2 {
+.info_form_container h2 {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -86,7 +86,7 @@ body {
   height: auto;
 }
 
-.education_form_container h2 img:last-child {
+.info_form_container h2 img:last-child {
   margin-left: auto;
   cursor: pointer;
 }
@@ -107,7 +107,7 @@ body {
   transform: scale(1.1);
 }
 
-.education_form {
+.info_form {
   margin-top: 1rem;
 }
 
@@ -151,13 +151,13 @@ body {
   transform: scale(1.1);
 }
 
-.education_list {
+.info_list {
   margin-top: 2rem;
   list-style: none;
   text-align: center;
 }
 
-.education_list li {
+.info_list li {
   margin-bottom: 1rem;
   padding: .25rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);

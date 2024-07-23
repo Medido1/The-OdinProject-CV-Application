@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function EducationDisplay({educationDetails, educationList, isTyping}) {
+export default function EducationDisplay({educationDetails, educationList}) {
   return (
     <div className='education_display'>
       <h2>Education</h2>

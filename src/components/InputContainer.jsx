@@ -1,6 +1,6 @@
 import React from 'react';
 import PersonalInput from './PersonalInput';
-import EducationInput from './EducationInput';
+import InfoInput from './InfoInput';
 
 export default function InputContainer(
   {personalDetails, onPersonalDetailsChange,
@@ -11,10 +11,12 @@ export default function InputContainer(
     <div className="input_container">
       <PersonalInput personalDetails={personalDetails} 
       onPersonalDetailsChange={onPersonalDetailsChange}/>
-      <EducationInput educationDetails={educationDetails}
-      onEducationDetailsChange={onEducationDetailsChange}
-      educationList={educationList}
-      updateEducationList={updateEducationList}
+      <InfoInput 
+      info={educationDetails}
+      oninfoChange={onEducationDetailsChange}
+      infoList={educationList}
+      updateinfoList={updateEducationList}
+      infoType="education"
       />
     </div>
     
