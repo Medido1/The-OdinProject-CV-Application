@@ -31,6 +31,24 @@ export default function Main() {
   function updateEducationList(newEducationList) {
     setEducationList(newEducationList)
   }
+
+  const [experienceDetails, setExperienceDetails] = useState({
+    company: "",
+    title:  "",
+    startDate: "",
+    endDate:""
+  })
+
+  function handleExperienceDetailsChange(newExperienceDetails) {
+    setExperienceDetails(newExperienceDetails)
+  }
+
+  const [experienceList, setExperienceList] = useState([]);
+
+  function updateExperienceList(newExperienceList) {
+    setExperienceList(newExperienceList)
+  }
+
   return (
     <main className='main'>
       <InputContainer 
@@ -40,7 +58,10 @@ export default function Main() {
       onEducationDetailsChange={handleEducationDetailsChange}
       educationList={educationList}
       updateEducationList={updateEducationList}
-
+      experienceDetails={experienceDetails}
+      onExperienceDetailsChange={handleEducationDetailsChange}
+      experienceList={experienceList}
+      updateExperienceList={updateExperienceList}
       />
       <DisplayContainer
       personalDetails={personalDetails}

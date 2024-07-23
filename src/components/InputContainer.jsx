@@ -6,6 +6,8 @@ export default function InputContainer(
   {personalDetails, onPersonalDetailsChange,
     educationDetails, onEducationDetailsChange,
     educationList, updateEducationList,
+    experienceDetails, onExperienceDetailsChange,
+    experienceList, updateExperienceList
   }) {
   return (
     <div className="input_container">
@@ -16,7 +18,14 @@ export default function InputContainer(
       oninfoChange={onEducationDetailsChange}
       infoList={educationList}
       updateinfoList={updateEducationList}
-      infoType="education"
+      infoType="Education"
+      />
+      <InfoInput 
+      info={experienceDetails}
+      oninfoChange={onExperienceDetailsChange}
+      infoList={experienceList}
+      updateinfoList={updateExperienceList}
+      infoType="Experience"
       />
     </div>
     

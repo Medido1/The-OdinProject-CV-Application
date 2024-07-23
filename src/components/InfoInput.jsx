@@ -86,13 +86,21 @@ export default function InfoInput(
       }
       {showForm && !addBtn && 
       <form action="" className='info_form'>
-        <InputGrp id="school" labeltext="School"
-          type="text" placeholder="Enter School/university"
-          value={info.school} onChange={handleChange}
+        <InputGrp 
+          id={infoType === "Education" ? "school" : "company"}
+          labeltext={infoType === "Education" ? "School" : "Company"}
+          type="text" 
+          placeholder={infoType === "Education" ? "Enter School/university": "Enter company name"}
+          value={infoType === "Education" ? info.school : info.company} 
+          onChange={handleChange}
         />
-        <InputGrp id="degree" labeltext="Degree"
-          type="text" placeholder="Enter degree/field of study"
-          value={info.degree} onChange={handleChange}
+        <InputGrp 
+          id={infoType === "Education" ? "degree" : "title"}
+          labeltext={infoType === "Education" ? "Degree" : "Title"}
+          type="text" 
+          placeholder={infoType === "Education" ? "Enter degree/field of study": "Enter position title"}
+          value={infoType === "Education" ? info.degree : info.title} 
+          onChange={handleChange}
         />
         <InputGrp id="startDate" labeltext="Start Date" type="date" 
           value={info.startDate} onChange={handleChange}
