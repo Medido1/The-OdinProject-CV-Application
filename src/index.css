@@ -125,9 +125,10 @@ body {
   padding: .25rem;
 }
 
-.education_display>div {
+.education_item {
   display: flex;
   gap: 3rem;
+  margin-bottom: 2rem;
 }
 
 .btns {

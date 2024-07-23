@@ -1,14 +1,28 @@
 import React from 'react';
 
-function Education() {
-  
-}
-
-export default function EducationDisplay({educationDetails}) {
+export default function EducationDisplay({educationDetails, educationList}) {
   return (
     <div className='education_display'>
       <h2>Education</h2>
-      <div>
+      {educationList.length > 0 && 
+        <div>
+          {educationList.map((i) => {
+            return (
+              <div key={i.id} className='education_item'>
+                <div>
+                  <p>{i.startDate}</p>
+                  <p>{i.endDate}</p>
+                </div>
+                <div>
+                  <h3>{i.school}</h3>
+                  <p>{i.degree}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      }
+      <div className='education_item'>
         <div>
           <p>{educationDetails.startDate}</p>
           <p>{educationDetails.endDate}</p>

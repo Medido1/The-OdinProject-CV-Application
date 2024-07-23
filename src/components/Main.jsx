@@ -44,6 +44,7 @@ export default function Main() {
       <DisplayContainer
       personalDetails={personalDetails}
       educationDetails={educationDetails}
+      educationList={educationList}
       />
     </main>
   )
