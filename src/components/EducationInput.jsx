@@ -39,9 +39,16 @@ export default function EducationInput(
 
   function saveInfo(e) {
     e.preventDefault();
-    const newEducationDetails = {...educationDetails, id : Date.now()};
-    const updatedList = [...educationList, newEducationDetails];
-    updateEducationList(updatedList);
+    if (!educationDetails.id) { // If educationDetails.id is falsy, it means this is a new entry
+      const newEducationDetails = {...educationDetails, id : Date.now()};
+      updateEducationList([...educationList, newEducationDetails]);
+    } else { // If educationDetails.id exists, update the existing entry
+      const updatedList = educationList.map(item => 
+        item.id === educationDetails.id ? {...educationDetails}:item
+      )
+      updateEducationList(updatedList);
+    }
+    
     setShowForm(false);
     setAddBtn(true);
     resetFormInput();
