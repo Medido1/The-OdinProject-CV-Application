@@ -4,11 +4,10 @@ import educationIcon from '../assets/icons/mortarboard.png';
 import arrowUp from '../assets/icons/up-arrow.png';
 import arrowDown from '../assets/icons/down-arrow.png';
 
-export default function EducationInput({educationDetails, onEducationDetailsChange}) {
+export default function EducationInput(
+  {educationDetails, onEducationDetailsChange, educationList, updateEducationList}) {
   const [showForm, setShowForm] = useState(false);
   const [addBtn, setAddBtn] = useState(true);
-  const [educationList, setEducationList] = useState([]);
- 
 
   function handleShowForm() {
     setShowForm(!showForm);
@@ -41,11 +40,10 @@ export default function EducationInput({educationDetails, onEducationDetailsChan
     e.preventDefault();
     const newEducationDetails = {...educationDetails, id : Date.now()};
     const updatedList = [...educationList, newEducationDetails];
-    setEducationList(updatedList);
+    updateEducationList(updatedList);
     setShowForm(false);
     setAddBtn(true);
     resetFormInput();
-
   }
 
   return (

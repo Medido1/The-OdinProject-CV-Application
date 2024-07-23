@@ -1,5 +1,9 @@
 import React from 'react';
 
+function Education() {
+  
+}
+
 export default function EducationDisplay({educationDetails}) {
   return (
     <div className='education_display'>

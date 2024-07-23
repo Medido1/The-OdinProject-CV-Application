@@ -25,7 +25,12 @@ export default function Main() {
   function handleEducationDetailsChange(newEducationDetails){
     setEducationDetails(newEducationDetails);
   }
-  
+
+  const [educationList, setEducationList] = useState([]);
+
+  function updateEducationList(newEducationList) {
+    setEducationList(newEducationList)
+  }
   return (
     <main className='main'>
       <InputContainer 
@@ -33,6 +38,8 @@ export default function Main() {
       onPersonalDetailsChange = {handlePersonalDetailsChange}
       educationDetails={educationDetails}
       onEducationDetailsChange={handleEducationDetailsChange}
+      educationList={educationList}
+      updateEducationList={updateEducationList}
       />
       <DisplayContainer
       personalDetails={personalDetails}
