@@ -13,7 +13,8 @@ export default function EducationInput({educationDetails, onEducationDetailsChan
   }
 
   function showAddBtn() {
-    setAddBtn(!addBtn)
+    setAddBtn(!addBtn);
+    setShowForm(true);
   }
 
   function handleChange(e) {
