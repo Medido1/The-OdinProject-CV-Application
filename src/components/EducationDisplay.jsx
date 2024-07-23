@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function EducationDisplay({educationDetails, educationList}) {
+export default function EducationDisplay({educationDetails, educationList, isTyping}) {
   return (
     <div className='education_display'>
       <h2>Education</h2>
@@ -22,16 +22,18 @@ export default function EducationDisplay({educationDetails, educationList}) {
           })}
         </div>
       }
-      <div className='education_item'>
-        <div>
-          <p>{educationDetails.startDate}</p>
-          <p>{educationDetails.endDate}</p>
+      {!educationDetails.id && ( // Check if educationDetails.id is truthy
+        <div className='education_item'>
+          <div>
+            <p>{educationDetails.startDate}</p>
+            <p>{educationDetails.endDate}</p>
+          </div>
+          <div>
+            <h3>{educationDetails.school}</h3>
+            <p>{educationDetails.degree}</p>
+          </div>
         </div>
-        <div>
-          <h3>{educationDetails.school}</h3>
-          <p>{educationDetails.degree}</p>
-        </div>
-      </div>
+      )}
     </div>
   )
 }

@@ -5,10 +5,11 @@ import arrowUp from '../assets/icons/up-arrow.png';
 import arrowDown from '../assets/icons/down-arrow.png';
 
 export default function EducationInput(
-  {educationDetails, onEducationDetailsChange, educationList, updateEducationList}) {
+  {educationDetails, onEducationDetailsChange, educationList, updateEducationList,
+  }) {
   const [showForm, setShowForm] = useState(false);
   const [addBtn, setAddBtn] = useState(true);
-
+  
   function handleShowForm() {
     setShowForm(!showForm);
   }
@@ -46,6 +47,13 @@ export default function EducationInput(
     resetFormInput();
   }
 
+  function modifyForm(index) {
+    let selectedEducation = educationList[index];
+    setAddBtn(!addBtn);
+    setShowForm(true);
+    onEducationDetailsChange(selectedEducation);
+  }
+
   return (
     <div className='education_form_container'>
       <h2>
@@ -62,14 +70,14 @@ export default function EducationInput(
           }
           {educationList.length > 0 && addBtn && 
             <ul className='education_list'>
-              {educationList.map(item => 
-                <li key={item.id}>{item.school}</li>
+              {educationList.map((item,index) => 
+                <li key={item.id} onClick={() => modifyForm(index)}>{item.school}</li>
               )}
             </ul>
           }
         </>
       }
-      {showForm && !addBtn &&
+      {showForm && !addBtn && 
       <form action="" className='education_form'>
         <InputGrp id="school" labeltext="School"
           type="text" placeholder="Enter School/university"
@@ -95,3 +103,11 @@ export default function EducationInput(
     </div>
   )
 }
+
+/* const newEducationDetails = {
+      school: educationList[index].school,
+      degree: educationList[index].degree,
+      startDate: educationList[index].startDate,
+      endDate: educationList[index].endDate,
+      id: educationList[index].id,
+    }; */

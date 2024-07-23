@@ -5,7 +5,7 @@ import EducationInput from './EducationInput';
 export default function InputContainer(
   {personalDetails, onPersonalDetailsChange,
     educationDetails, onEducationDetailsChange,
-    educationList, updateEducationList
+    educationList, updateEducationList,
   }) {
   return (
     <div className="input_container">

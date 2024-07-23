@@ -40,6 +40,7 @@ export default function Main() {
       onEducationDetailsChange={handleEducationDetailsChange}
       educationList={educationList}
       updateEducationList={updateEducationList}
+
       />
       <DisplayContainer
       personalDetails={personalDetails}
