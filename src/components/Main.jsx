@@ -59,7 +59,7 @@ export default function Main() {
       educationList={educationList}
       updateEducationList={updateEducationList}
       experienceDetails={experienceDetails}
-      onExperienceDetailsChange={handleEducationDetailsChange}
+      onExperienceDetailsChange={handleExperienceDetailsChange}
       experienceList={experienceList}
       updateExperienceList={updateExperienceList}
       />
@@ -67,6 +67,8 @@ export default function Main() {
       personalDetails={personalDetails}
       educationDetails={educationDetails}
       educationList={educationList}
+      experienceDetails={experienceDetails}
+      experienceList={experienceList}
       />
     </main>
   )

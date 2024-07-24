@@ -78,7 +78,9 @@ export default function InfoInput(
           {infoList.length > 0 && addBtn && 
             <ul className='info_list'>
               {infoList.map((item,index) => 
-                <li key={item.id} onClick={() => modifyForm(index)}>{item.school}</li>
+                <li key={item.id} onClick={() => modifyForm(index)}>
+                  {infoType === "Education" ? item.school : item.company}
+                  </li>
               )}
             </ul>
           }

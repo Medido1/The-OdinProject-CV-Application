@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function InfoDisplay({educationDetails, educationList}) {
+export default function InfoDisplay({info, infoList, infoType}) {
   return (
     <div className='education_display'>
-      <h2>Education</h2>
-      {educationList.length > 0 && 
+      <h2>{infoType === "Education" ? "Education" : "Experience"}</h2>
+      {infoList.length > 0 && 
         <div>
-          {educationList.map((i) => {
+          {infoList.map((i) => {
             return (
               <div key={i.id} className='education_item'>
                 <div>
@@ -14,23 +14,23 @@ export default function InfoDisplay({educationDetails, educationList}) {
                   <p>{i.endDate}</p>
                 </div>
                 <div>
-                  <h3>{i.school}</h3>
-                  <p>{i.degree}</p>
+                  <h3>{infoType === "Education"? i.school: i.company}</h3>
+                  <p>{infoType === "Education"? i.degree: i.title}</p>
                 </div>
               </div>
             )
           })}
         </div>
       }
-      {!educationDetails.id && ( // Check if educationDetails.id is truthy
+      {!info.id && ( // Check if info.id is truthy
         <div className='education_item'>
           <div>
-            <p>{educationDetails.startDate}</p>
-            <p>{educationDetails.endDate}</p>
+            <p>{info.startDate}</p>
+            <p>{info.endDate}</p>
           </div>
           <div>
-            <h3>{educationDetails.school}</h3>
-            <p>{educationDetails.degree}</p>
+            <h3>{infoType === "Education"? info.school: info.company}</h3>
+            <p>{infoType === "Education"? info.degree: info.title}</p>
           </div>
         </div>
       )}

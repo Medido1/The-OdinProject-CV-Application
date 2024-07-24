@@ -1,15 +1,21 @@
 import React from 'react';
 import PersonalInfoDisplay from './PersonalInfoDisplay';
-import EducationDisplay from './EducationDisplay';
+import InfoDisplay from './InfoDisplay';
 
 export default function displayContainer({personalDetails, educationDetails, 
-  educationList}) {
+  educationList, experienceDetails, experienceList}) {
   return (
     <div className='display_container'>
       <PersonalInfoDisplay personalDetails={personalDetails}/>
-      <EducationDisplay 
-      educationDetails={educationDetails}
-      educationList={educationList}
+      <InfoDisplay 
+        info={educationDetails}
+        infoList={educationList}
+        infoType = "Education"
+      />
+      <InfoDisplay
+        info={experienceDetails}
+        infoList={experienceList}
+        infoType = "Experience"
       />
     </div>
   )
