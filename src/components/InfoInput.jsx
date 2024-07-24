@@ -130,7 +130,7 @@ export default function InfoInput(
         <div className='description_area'>
           <label htmlFor='descritpion'>Description</label>
           <textarea id="description" rows="5" cols="10" placeholder='Enter discription'
-          value={info.discription} onChange={handleChange}></textarea>
+          value={info.discription} onChange={handleChange} maxLength="100"></textarea>
         </div>
         }
         <div className="btns">

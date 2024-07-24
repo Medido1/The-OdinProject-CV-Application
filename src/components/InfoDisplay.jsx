@@ -9,7 +9,7 @@ export default function InfoDisplay({info, infoList, infoType}) {
           {infoList.map((i) => {
             return (
               <div key={i.id} className='education_item'>
-                <div>
+                <div className='dates'>
                   <p>{i.startDate}</p>
                   <p>{i.endDate}</p>
                 </div>
@@ -29,7 +29,7 @@ export default function InfoDisplay({info, infoList, infoType}) {
       }
       {!info.id && ( // Check if info.id is truthy
         <div className='education_item'>
-          <div>
+          <div className='dates'>
             <p>{info.startDate}</p>
             <p>{info.endDate}</p>
           </div>
