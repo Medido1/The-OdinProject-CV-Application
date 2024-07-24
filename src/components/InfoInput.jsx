@@ -61,6 +61,12 @@ export default function InfoInput(
     oninfoChange(selectedinfo);
   }
 
+  function cancelInput(e) {
+    e.preventDefault();
+    resetFormInput();
+    setAddBtn(!addBtn);
+  }
+
   return (
     <div className='info_form_container'>
       <h2>
@@ -119,7 +125,7 @@ export default function InfoInput(
         }
         <div className="btns">
           <button className="btn">Delete</button>
-          <button className="btn">Cancel</button>
+          <button className="btn" onClick={cancelInput}>Cancel</button>
           <button className="btn" onClick={saveInfo}>Save</button>
         </div>
       </form>
