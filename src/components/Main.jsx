@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import InputContainer from './InputContainer';
 import DisplayContainer from './DisplayContainer';
 import removeIcon from '../assets/icons/remove.png';
+import CustomiseContainer from './CustomizeContainer';
 
 export default function Main() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -90,6 +91,7 @@ export default function Main() {
       experienceDetails={experienceDetails}
       experienceList={experienceList}
       />
+      <CustomiseContainer />
     </main>
   )
 }
