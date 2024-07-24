@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputContainer from './InputContainer';
 import DisplayContainer from './DisplayContainer';
+import removeIcon from '../assets/icons/remove.png';
 
 export default function Main() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -50,20 +51,38 @@ export default function Main() {
     setExperienceList(newExperienceList)
   }
 
+  function clearResume() {
+    updateEducationList([]);
+    updateExperienceList([]);
+    setPersonalDetails({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      address: "",
+    })
+  }
+ 
   return (
     <main className='main'>
-      <InputContainer 
-      personalDetails={personalDetails}
-      onPersonalDetailsChange = {handlePersonalDetailsChange}
-      educationDetails={educationDetails}
-      onEducationDetailsChange={handleEducationDetailsChange}
-      educationList={educationList}
-      updateEducationList={updateEducationList}
-      experienceDetails={experienceDetails}
-      onExperienceDetailsChange={handleExperienceDetailsChange}
-      experienceList={experienceList}
-      updateExperienceList={updateExperienceList}
+      <div>
+        <button className='clear_btn' onClick={clearResume}>
+          <img src={removeIcon} alt='remove icon' className='icon'/>
+          <p>Clear Resume</p>
+        </button>
+        <InputContainer 
+        personalDetails={personalDetails}
+        onPersonalDetailsChange = {handlePersonalDetailsChange}
+        educationDetails={educationDetails}
+        onEducationDetailsChange={handleEducationDetailsChange}
+        educationList={educationList}
+        updateEducationList={updateEducationList}
+        experienceDetails={experienceDetails}
+        onExperienceDetailsChange={handleExperienceDetailsChange}
+        experienceList={experienceList}
+        updateExperienceList={updateExperienceList}
       />
+      </div>
       <DisplayContainer
       personalDetails={personalDetails}
       educationDetails={educationDetails}
