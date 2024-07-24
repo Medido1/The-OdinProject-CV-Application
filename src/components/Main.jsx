@@ -3,6 +3,9 @@ import InputContainer from './InputContainer';
 import DisplayContainer from './DisplayContainer';
 import removeIcon from '../assets/icons/remove.png';
 import CustomiseContainer from './CustomizeContainer';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import pdfIcon from '../assets/icons/pdf.png';
 
 export default function Main() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -64,13 +67,32 @@ export default function Main() {
     })
   }
 
+  function saveAsPDF() {
+    const input = document.getElementById('resume');
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('resume.pdf');
+    });
+  }
+
   return (
     <main className='main'>
       <div>
-        <button className='clear_btn' onClick={clearResume}>
-          <img src={removeIcon} alt='remove icon' className='icon'/>
-          <p>Clear Resume</p>
-        </button>
+        <div className='btns'>
+          <button className='clear_btn' onClick={clearResume}>
+            <img src={removeIcon} alt='reset cv' className='icon'/>
+            <p>Clear Resume</p>
+          </button>
+          <button className='save_btn' onClick={saveAsPDF}>
+            <img src={pdfIcon} alt='save as pdf' className='icon'/>
+            <p>Save</p>
+          </button>
+        </div>
         <InputContainer 
         personalDetails={personalDetails}
         onPersonalDetailsChange = {handlePersonalDetailsChange}
@@ -84,13 +106,15 @@ export default function Main() {
         updateExperienceList={updateExperienceList}
       />
       </div>
-      <DisplayContainer
+      <div id="resume">
+      <DisplayContainer 
         personalDetails={personalDetails}
         educationDetails={educationDetails}
         educationList={educationList}
         experienceDetails={experienceDetails}
         experienceList={experienceList}
       />
+      </div>
       <CustomiseContainer />
     </main>
   )

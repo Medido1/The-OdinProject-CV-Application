@@ -1,7 +1,7 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
   --resume-bg-color: #f1f5f9;
-  --personal-info-color: #ffffff;
+  --personal-info-color: black;
   --container-display: block;
   --personal-info-width: 100%;
   --personal-info-height: 16%;
@@ -48,7 +48,6 @@ body {
 .info_form_container{
   background-color: #fff;
   padding: 1.25rem;
-  border-radius: .5rem;
 }
 
 .personal_details_form,
@@ -59,7 +58,7 @@ body {
 }
 
 .display_container {
-  width: 50%;
+
   max-height: 1000px;
   display: var(--container-display);
   flex-direction: var(--container-direction);
@@ -204,7 +203,8 @@ body {
   max-width: 70%;
 }
 
-.clear_btn {
+.clear_btn,
+.save_btn {
   cursor: pointer;
   background-color: #f1f5f9;
   font-size: 1.125rem;
@@ -219,7 +219,8 @@ body {
   transition: transform 250ms ease-in-out;
 }
 
-.clear_btn:hover {
+.clear_btn:hover,
+.save_btn:hover {
   transform: scale(1.1);
   background-color: #fca5a5;
 }
