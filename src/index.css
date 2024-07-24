@@ -4,7 +4,6 @@
   --personal-info-color: black;
   --container-display: block;
   --personal-info-width: 100%;
-  --personal-info-height: 16%;
   --container-direction : row;
 }
 
@@ -63,7 +62,9 @@ body {
 }
 
 .display_container {
-  max-height: 1000px;
+  min-height: 600px;
+  max-height: 700px;
+  border: 1px solid black;
   display: var(--container-display);
   flex-direction: var(--container-direction);
 }
@@ -72,7 +73,6 @@ body {
   background-color: var(--resume-bg-color);
   min-width: var(--personal-info-width);
   max-width: var(--personal-info-width);
-  height: var(--personal-info-height);
   min-height: 200px;
   display: flex;
   flex-direction: column;

@@ -34,21 +34,17 @@ export default function CustomiseContainer({}) {
     if (direction === "left") {
       updateProperty("--container-display", "flex");
       updateProperty("--personal-info-width", "40%");
-      updateProperty("--personal-info-height", "100%");
       updateProperty("--container-direction", "row");
     } 
     if (direction === "right") {
       updateProperty("--container-display", "flex");
       updateProperty("--personal-info-width", "40%");
-      updateProperty("--personal-info-height", "100%");
       updateProperty("--container-direction", "row-reverse");
     }
     if (direction === "top") {
       updateProperty("--container-display", "block");
       updateProperty("--personal-info-width", "100%");
-      updateProperty("--personal-info-height", "16%");
     }
-
   }
   return (
     <div className='customize_container'>
