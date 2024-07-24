@@ -67,6 +67,16 @@ export default function InfoInput(
     setAddBtn(!addBtn);
   }
 
+  function deleteInfo(e) {
+    e.preventDefault();
+    setAddBtn(!addBtn);
+    setShowForm(true);
+    let selectedId = info.id;
+    let remainingItems= infoList.filter(item => selectedId !== item.id);
+    updateinfoList(remainingItems);
+    resetFormInput();
+  }
+
   return (
     <div className='info_form_container'>
       <h2>
@@ -124,9 +134,9 @@ export default function InfoInput(
         </div>
         }
         <div className="btns">
-          <button className="btn">Delete</button>
+          <button className="btn" onClick={deleteInfo}>Delete</button>
           <button className="btn" onClick={cancelInput}>Cancel</button>
-          <button className="btn" onClick={saveInfo}>Save</button>
+          <button className="btn" onClick={saveInfo} >Save</button>
         </div>
       </form>
       }
