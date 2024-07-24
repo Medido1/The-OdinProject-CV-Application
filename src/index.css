@@ -57,8 +57,12 @@ body {
   border-radius: .5rem;
 }
 
-.display_container {
+#resume {
+  width: 100%;
+  max-width: 600px;
+}
 
+.display_container {
   max-height: 1000px;
   display: var(--container-display);
   flex-direction: var(--container-direction);
