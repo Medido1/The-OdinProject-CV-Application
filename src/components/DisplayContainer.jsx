@@ -3,10 +3,11 @@ import PersonalInfoDisplay from './PersonalInfoDisplay';
 import InfoDisplay from './InfoDisplay';
 
 export default function displayContainer({personalDetails, educationDetails, 
-  educationList, experienceDetails, experienceList}) {
+  educationList, experienceDetails, experienceList,
+  color}) {
   return (
     <div className='display_container'>
-      <PersonalInfoDisplay personalDetails={personalDetails}/>
+      <PersonalInfoDisplay personalDetails={personalDetails} color={color}/>
       <InfoDisplay 
         info={educationDetails}
         infoList={educationList}

@@ -63,6 +63,12 @@ export default function Main() {
       address: "",
     })
   }
+
+  const [color, setColor] = useState("#f1f5f9");
+
+  function handleColorChange(e) {
+    setColor(e.target.value)
+  }
  
   return (
     <main className='main'>
@@ -85,13 +91,17 @@ export default function Main() {
       />
       </div>
       <DisplayContainer
-      personalDetails={personalDetails}
-      educationDetails={educationDetails}
-      educationList={educationList}
-      experienceDetails={experienceDetails}
-      experienceList={experienceList}
+        personalDetails={personalDetails}
+        educationDetails={educationDetails}
+        educationList={educationList}
+        experienceDetails={experienceDetails}
+        experienceList={experienceList}
+        color={color}
       />
-      <CustomiseContainer />
+      <CustomiseContainer 
+        color={color}
+        handleColorChange={handleColorChange}
+      />
     </main>
   )
 }

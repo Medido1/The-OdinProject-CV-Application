@@ -3,9 +3,9 @@ import emailIcon from '../assets/icons/mail.png';
 import phoneIcon from '../assets/icons/phone.png';
 import locationIcon from '../assets/icons/location.png';
 
-export default function PersonalInfoDisplay({personalDetails}) {
+export default function PersonalInfoDisplay({personalDetails, color}) {
   return (
-    <div className="personal_info_display">
+    <div className="personal_info_display" style={{backgroundColor: color}}>
       <h2>{personalDetails.firstName}  {personalDetails.lastName}</h2>
       <div className='personal_details'>
         <p>
