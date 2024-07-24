@@ -17,6 +17,11 @@ export default function InfoDisplay({info, infoList, infoType}) {
                   <h3>{infoType === "Education"? i.school: i.company}</h3>
                   <p>{infoType === "Education"? i.degree: i.title}</p>
                 </div>
+                {infoType === "Experience" && 
+                  <div className='description_section'>
+                    <p>{i.description}</p>
+                  </div>
+                }
               </div>
             )
           })}
@@ -32,6 +37,11 @@ export default function InfoDisplay({info, infoList, infoType}) {
             <h3>{infoType === "Education"? info.school: info.company}</h3>
             <p>{infoType === "Education"? info.degree: info.title}</p>
           </div>
+          {infoType === "Experience" && 
+          <div className='description_section'>
+            <p>{info.description}</p>
+          </div>
+          }
         </div>
       )}
     </div>

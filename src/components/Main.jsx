@@ -36,7 +36,8 @@ export default function Main() {
     company: "",
     title:  "",
     startDate: "",
-    endDate:""
+    endDate:"",
+    description: "",
   })
 
   function handleExperienceDetailsChange(newExperienceDetails) {
