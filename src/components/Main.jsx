@@ -90,7 +90,6 @@ export default function Main() {
         educationList={educationList}
         experienceDetails={experienceDetails}
         experienceList={experienceList}
-     
       />
       <CustomiseContainer />
     </main>

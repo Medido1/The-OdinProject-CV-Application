@@ -2,6 +2,10 @@
   font-family: Arial, Helvetica, sans-serif;
   --resume-bg-color: #f1f5f9;
   --personal-info-color: #ffffff;
+  --container-display: block;
+  --personal-info-width: 100%;
+  --personal-info-height: 16%;
+  --container-direction : row;
 }
 
 * {
@@ -57,12 +61,15 @@ body {
 .display_container {
   width: 50%;
   max-height: 1000px;
+  display: var(--container-display);
+  flex-direction: var(--container-direction);
 }
 
 .personal_info_display {
   background-color: var(--resume-bg-color);
-  width: 100%;
-  height: 14%;
+  min-width: var(--personal-info-width);
+  max-width: var(--personal-info-width);
+  height: var(--personal-info-height);
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -135,6 +142,10 @@ body {
   display: flex;
   gap: 3rem;
   height: 90px;
+}
+
+.dates {
+  min-width: 16%;
 }
 
 .btns {
