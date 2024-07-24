@@ -1,6 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function CustomiseContainer({color, handleColorChange}) {
+function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result 
+  ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+  }
+  :null
+}
+
+function updateProperty  (key, val) {
+  document.body.style.setProperty(key, val);
+}
+
+export default function CustomiseContainer({}) {
+  const [color, setColor] = useState("#f1f5f9");
+
+  function handleColorChange(e) {
+    setColor(e.target.value);
+    const {r, g, b} = hexToRgb(color)
+    const brightness = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    const isBrighter = brightness > 127.5;
+    const fontColor = isBrighter ? "black" : "white"
+
+    updateProperty("--resume-bg-color", color)
+    updateProperty("--personal-info-color", fontColor)
+  } 
   return (
     <div className='customize_container'>
       <div className='layout_container'>

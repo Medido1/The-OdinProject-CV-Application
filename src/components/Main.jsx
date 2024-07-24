@@ -64,12 +64,6 @@ export default function Main() {
     })
   }
 
-  const [color, setColor] = useState("#f1f5f9");
-
-  function handleColorChange(e) {
-    setColor(e.target.value)
-  }
- 
   return (
     <main className='main'>
       <div>
@@ -96,12 +90,9 @@ export default function Main() {
         educationList={educationList}
         experienceDetails={experienceDetails}
         experienceList={experienceList}
-        color={color}
+     
       />
-      <CustomiseContainer 
-        color={color}
-        handleColorChange={handleColorChange}
-      />
+      <CustomiseContainer />
     </main>
   )
 }
