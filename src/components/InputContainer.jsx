@@ -7,7 +7,8 @@ export default function InputContainer(
     educationDetails, onEducationDetailsChange,
     educationList, updateEducationList,
     experienceDetails, onExperienceDetailsChange,
-    experienceList, updateExperienceList
+    experienceList, updateExperienceList,
+    setIsTyping
   }) {
   return (
     <div className="input_container">
@@ -19,6 +20,7 @@ export default function InputContainer(
       infoList={educationList}
       updateinfoList={updateEducationList}
       infoType="Education"
+      setIsTyping={setIsTyping}
       />
       <InfoInput 
       info={experienceDetails}
@@ -26,6 +28,7 @@ export default function InputContainer(
       infoList={experienceList}
       updateinfoList={updateExperienceList}
       infoType="Experience"
+      setIsTyping={setIsTyping}
       />
     </div>
     

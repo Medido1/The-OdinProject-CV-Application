@@ -8,6 +8,7 @@ import jsPDF from 'jspdf';
 import pdfIcon from '../assets/icons/pdf.png';
 
 export default function Main() {
+  const [isTyping, setIsTyping] = useState(false);
   const [personalDetails, setPersonalDetails] = useState({
     firstName: "",
     lastName: "",
@@ -104,6 +105,7 @@ export default function Main() {
         onExperienceDetailsChange={handleExperienceDetailsChange}
         experienceList={experienceList}
         updateExperienceList={updateExperienceList}
+        setIsTyping={setIsTyping}
       />
       </div>
       <div id="resume">
@@ -113,6 +115,7 @@ export default function Main() {
         educationList={educationList}
         experienceDetails={experienceDetails}
         experienceList={experienceList}
+        isTyping={isTyping}
       />
       </div>
       <CustomiseContainer />

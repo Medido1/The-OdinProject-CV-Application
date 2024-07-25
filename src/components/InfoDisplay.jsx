@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function InfoDisplay({info, infoList, infoType}) {
+export default function InfoDisplay({info, infoList, infoType, isTyping}) {
   return (
     <div className='education_display'>
       <h2>{infoType === "Education" ? "Education" : "Experience"}</h2>
@@ -27,7 +27,7 @@ export default function InfoDisplay({info, infoList, infoType}) {
           })}
         </div>
       }
-      {!info.id && ( // Check if info.id is truthy
+      {!info.id && isTyping && ( // Check if info.id is truthy
         <div className='education_item'>
           <div className='dates'>
             <p>{info.startDate}</p>

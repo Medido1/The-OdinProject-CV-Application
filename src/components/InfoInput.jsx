@@ -5,7 +5,7 @@ import arrowUp from '../assets/icons/up-arrow.png';
 import arrowDown from '../assets/icons/down-arrow.png';
 
 export default function InfoInput(
-  {info, oninfoChange, infoList, updateinfoList, infoType
+  {info, oninfoChange, infoList, updateinfoList, infoType, setIsTyping
   }) {
   const [showForm, setShowForm] = useState(false);
   const [addBtn, setAddBtn] = useState(true);
@@ -17,6 +17,7 @@ export default function InfoInput(
   function showAddBtn() {
     setAddBtn(!addBtn);
     setShowForm(true);
+    setIsTyping(true);
   }
 
   function handleChange(e) {
@@ -52,6 +53,7 @@ export default function InfoInput(
     setShowForm(false);
     setAddBtn(true);
     resetFormInput();
+    setIsTyping(false)
   }
 
   function modifyForm(index) {
@@ -65,6 +67,7 @@ export default function InfoInput(
     e.preventDefault();
     resetFormInput();
     setAddBtn(!addBtn);
+    setIsTyping(false)
   }
 
   function deleteInfo(e) {
@@ -75,6 +78,7 @@ export default function InfoInput(
     let remainingItems= infoList.filter(item => selectedId !== item.id);
     updateinfoList(remainingItems);
     resetFormInput();
+    setIsTyping(false);
   }
 
   return (

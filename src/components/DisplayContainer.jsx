@@ -3,7 +3,7 @@ import PersonalInfoDisplay from './PersonalInfoDisplay';
 import InfoDisplay from './InfoDisplay';
 
 export default function displayContainer({personalDetails, educationDetails, 
-  educationList, experienceDetails, experienceList,
+  educationList, experienceDetails, experienceList, isTyping,
   color}) {
   return (
     <div className='display_container'>
@@ -13,11 +13,13 @@ export default function displayContainer({personalDetails, educationDetails,
           info={educationDetails}
           infoList={educationList}
           infoType = "Education"
+          isTyping={isTyping}
         />
         <InfoDisplay
           info={experienceDetails}
           infoList={experienceList}
           infoType = "Experience"
+          isTyping={isTyping}
         />
       </div>
     </div>
