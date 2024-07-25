@@ -1,10 +1,11 @@
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  --font-family: Arial, Helvetica, sans-serif;
   --resume-bg-color: #f1f5f9;
   --personal-info-color: black;
   --container-display: block;
   --personal-info-width: 100%;
   --container-direction : row;
+  --item-flex-direction : row;
 }
 
 * {
@@ -13,8 +14,10 @@
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
+html,body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; 
 }
 
 .main_header {
@@ -22,12 +25,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
   padding: 1rem;
+  width: 100%;
 }
 
 .main {
-  padding: 1rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -36,6 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 80vw;
 }
 
 .personal_info_display {
@@ -46,7 +53,7 @@ body {
 .personal_info_display,
 .info_form_container{
   background-color: #fff;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .personal_details_form,
@@ -58,12 +65,12 @@ body {
 
 #resume {
   width: 100%;
-  max-width: 600px;
+  max-width: 90vw;
 }
 
 .display_container {
   min-height: 600px;
-  max-height: 700px;
+  max-height: 1000px;
   border: 1px solid black;
   display: var(--container-display);
   flex-direction: var(--container-direction);
@@ -71,11 +78,15 @@ body {
 
 .personal_info_display {
   background-color: var(--resume-bg-color);
-  min-width: var(--personal-info-width);
-  max-width: var(--personal-info-width);
+  min-width: 45%;
   min-height: 200px;
   display: flex;
   flex-direction: column;
+}
+
+.main_info {
+  display: flex;
+  gap: 1rem;
 }
 
 .personal_info_display h2 {
@@ -83,7 +94,7 @@ body {
 }
 
 .personal_details {
-  font-size: 1.125rem;
+  font-size: .625rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -95,6 +106,10 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.personal_details .icon {
+  width: 15px;
 }
 
 .icon {
@@ -129,13 +144,14 @@ body {
 
 .education_display {
   padding: 1.25rem;
-  font-size: 1.25rem;
+  font-size: .75rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .education_display h2 {
+  font-size: .75rem;
   text-align: center;
   background-color: #f4f4f5;
   padding: .25rem;
@@ -143,12 +159,13 @@ body {
 
 .education_item {
   display: flex;
-  gap: 3rem;
+  flex-direction: var(--item-flex-direction);
+  gap: 1.5rem;
   height: 90px;
 }
 
 .dates {
-  min-width: 16%;
+  min-width: 22%;
 }
 
 .btns {
@@ -202,7 +219,7 @@ body {
 }
 
 .description_section {
-  font-size: 1.25rem;
+  font-size: .75rem;
   overflow-wrap: break-word;
   max-width: 70%;
 }
@@ -239,7 +256,7 @@ body {
   padding: 1rem;
   background-color: #f1f5f9;
   height: 200px;
-  width: 400px;
+  width: 250px;
   border-radius: .5rem;
 }
 
@@ -291,7 +308,7 @@ body {
   padding: 1rem;
   background-color: #f1f5f9;
   height: 100px;
-  width: 400px;
+  width: 250px;
   border-radius: .5rem;
 }
 

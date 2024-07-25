@@ -33,17 +33,20 @@ export default function CustomiseContainer({}) {
     const direction = e.target.id
     if (direction === "left") {
       updateProperty("--container-display", "flex");
-      updateProperty("--personal-info-width", "40%");
+      updateProperty("--personal-info-width", "50%");
       updateProperty("--container-direction", "row");
+      updateProperty("--item-flex-direction", "column");
     } 
     if (direction === "right") {
       updateProperty("--container-display", "flex");
-      updateProperty("--personal-info-width", "40%");
+      updateProperty("--personal-info-width", "50%");
       updateProperty("--container-direction", "row-reverse");
+      updateProperty("--item-flex-direction", "column");
     }
     if (direction === "top") {
       updateProperty("--container-display", "block");
       updateProperty("--personal-info-width", "100%");
+      updateProperty("--item-flex-direction", "row");
     }
   }
   return (

@@ -9,13 +9,15 @@ export default function InfoDisplay({info, infoList, infoType, isTyping}) {
           {infoList.map((i) => {
             return (
               <div key={i.id} className='education_item'>
-                <div className='dates'>
-                  <p>{i.startDate}</p>
-                  <p>{i.endDate}</p>
-                </div>
-                <div>
-                  <h3>{infoType === "Education"? i.school: i.company}</h3>
-                  <p>{infoType === "Education"? i.degree: i.title}</p>
+                <div className="main_info">
+                  <div className='dates'>
+                    <p>{i.startDate}</p>
+                    <p>{i.endDate}</p>
+                  </div>
+                  <div>
+                    <h3>{infoType === "Education"? i.school: i.company}</h3>
+                    <p>{infoType === "Education"? i.degree: i.title}</p>
+                  </div>
                 </div>
                 {infoType === "Experience" && 
                   <div className='description_section'>
@@ -29,13 +31,15 @@ export default function InfoDisplay({info, infoList, infoType, isTyping}) {
       }
       {!info.id && isTyping && ( // Check if info.id is truthy
         <div className='education_item'>
-          <div className='dates'>
-            <p>{info.startDate}</p>
-            <p>{info.endDate}</p>
-          </div>
-          <div>
-            <h3>{infoType === "Education"? info.school: info.company}</h3>
-            <p>{infoType === "Education"? info.degree: info.title}</p>
+          <div className="main_info">
+            <div className='dates'>
+              <p>{info.startDate}</p>
+              <p>{info.endDate}</p>
+            </div>
+            <div>
+              <h3>{infoType === "Education"? info.school: info.company}</h3>
+              <p>{infoType === "Education"? info.degree: info.title}</p>
+            </div>
           </div>
           {infoType === "Experience" && 
           <div className='description_section'>
