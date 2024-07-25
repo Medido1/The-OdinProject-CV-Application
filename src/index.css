@@ -65,7 +65,7 @@ html,body {
 
 #resume {
   width: 100%;
-  max-width: 90vw;
+  max-width: 600px;
 }
 
 .display_container {
@@ -322,4 +322,19 @@ html,body {
   border-radius: 50%;
   outline: none;
   border: 0;
+}
+
+@media (min-width: 850px) {
+  .main {
+    flex-direction: row;
+  }
+  .personal_details,
+  .education_display,
+  .description_section {
+    font-size: 1.125rem;
+  } 
+  .education_display h2 {
+    font-size: 1.5rem;
+  }
+  
 }
